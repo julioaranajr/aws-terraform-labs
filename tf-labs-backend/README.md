@@ -22,6 +22,7 @@ provider "aws" {
   region = "eu-central-1"
 }
 ```
+
 ![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Create.S3Bucket.png)
 
 # Step 2: Create S3 bucket for backend
@@ -101,14 +102,17 @@ Relaunch the initialization to allow terraform to apply the changes of the backe
 
 ```sh
 terraform init 
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Init.png)
 
 terraform init -reconfigure
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Reconfigure.png)
 
 terraform plan
 
 terraform apply
 
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Apply.png)
 ```
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Init.png)
+
+
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Reconfigure.png)
+
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Apply.png)
