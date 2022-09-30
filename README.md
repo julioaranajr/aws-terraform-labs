@@ -46,20 +46,20 @@ provider "aws" {
 ## <a name="step2"></a>Step 2: Create S3 bucket for backend
 
 > **Create a new file:** `main.tf`
-- `main.tf` file define all the resources we are about to create, which is an S3 bucket named for example: `talent-academy-account_id-tfstates-name.related.with.the.project`
+- `main.tf` file define all the resources we are about to create, which is an S3 bucket named for example: `talent-academy-account_id-tfstates-aws.your.account.ID`
 
 - Fine more about the resource `aws_s3_bucket` from the [terraform documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
 
 ```javascript
 resource "aws_s3_bucket" "ta_backend_bucket" {
-    bucket = "ta-terraform-tfstates-talent-academy-account_id-tfstates-name.related.with.the.project"
+    bucket = "ta-terraform-tfstates-talent-academy-account_id-tfstates-aws.your.account.ID"
 
     lifecycle {
       prevent_destroy = true
     }
 
     tags = {
-        Name = "ta-terraform-tfstates-talent-academy-account_id-tfstates-name.related.with.the.project"
+        Name = "ta-terraform-tfstates-talent-academy-account_id-tfstates-aws.your.account.ID"
         Environment = "Test"
         Team        = "Talent-Academy"
         Owner       = "yourname"
@@ -106,7 +106,7 @@ This will configure the s3 bucket for the backend.
 ```javascript
 terraform {
   backend "s3" {
-    bucket = "talent-academy-account_id-tfstates-name.related.with.the.projectf"
+    bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
     key    = "sprint1/week2/training-terraform/terraform.tfstates"
   }
 }
@@ -157,7 +157,7 @@ Modify the `backend.tf` file again to add the new dynamo db table lock
 ```javascript
 terraform {
   backend "s3" {
-    bucket = "talent-academy-account_id-tfstates-name.related.with.the.project"
+    bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
     key    = "sprint1/week2/training-terraform/terraform.tfstates"
     dynamodb_table = "terraform-lock"
   }
