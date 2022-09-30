@@ -22,9 +22,6 @@ provider "aws" {
   region = "eu-central-1"
 }
 ```
-
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Create.S3Bucket.png)
-
 # Step 2: Create S3 bucket for backend
 
 > **Create a new file:** `main.tf`
@@ -57,7 +54,6 @@ resource "aws_s3_bucket_versioning" "version_my_bucket" {
 }
 
 ```
-
 # Step 3: Initialize to get ready for a Plan
 
 That should be enough to get started and verify that everything is setup properly.
@@ -110,9 +106,3 @@ terraform plan
 terraform apply
 
 ```
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Init.png)
-
-
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Reconfigure.png)
-
-![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Apply.png)
