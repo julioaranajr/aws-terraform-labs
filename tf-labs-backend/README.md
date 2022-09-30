@@ -106,3 +106,31 @@ terraform plan
 terraform apply
 
 ```
+
+# Step 8: Create a .gitignore
+
+> **Create a new file:** `.gitignore`
+Before pushing your work, we need to make sure that certain files and folders are not part of the repository, for example binaries or temporary files. The `tfstates` should never be saved locally or in your source control tool. You can let git knows to ignore these files using a `.gitignore` hidden file.
+
+In the `.gitignore file`, add the following list of files and folders
+
+```sh
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# lock file
+.terraform.lock.hcl
+```
+
+# Step 912: Push your changes
+
+Your `git status` should now ignore the file listed above. You can now add, commit and push your new codes:
+```sh
+git add .
+git commit -m "Setting up backend to work with terraform"
+git push
+```
