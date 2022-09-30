@@ -22,8 +22,9 @@ provider "aws" {
   region = "eu-central-1"
 }
 ```
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Create.S3Bucket.png)
 
-## <a name="step2"></a>Step 2: Create S3 bucket for backend
+# Step 2: Create S3 bucket for backend
 
 > **Create a new file:** `main.tf`
 - `main.tf` file define all the resources we are about to create, which is an S3 bucket named for example: `talent-academy-account_id-tfstates-aws.your.account.ID`
@@ -56,7 +57,7 @@ resource "aws_s3_bucket_versioning" "version_my_bucket" {
 
 ```
 
-## <a name="step3"></a>Step 3: Initialize to get ready for a Plan
+# Step 3: Initialize to get ready for a Plan
 
 That should be enough to get started and verify that everything is setup properly.
 
@@ -68,7 +69,7 @@ terraform init
 terraform plan
 ```
 
-## <a name="step4"></a>Step 4: Deploy your infrastructure
+# Step 4: Deploy your infrastructure
 
 When you are satisfied with the `plan`, you can deploy your changes with the `apply` command, and type in `yes` to execute:
 
@@ -76,7 +77,7 @@ When you are satisfied with the `plan`, you can deploy your changes with the `ap
 terraform apply
 ```
 
-## <a name="step5"></a>Step 5: Create backend configuration
+# Step 5: Create backend configuration
 
 The creation of the S3 bucket allows us to use it as our backend to store our `terraform.tfstates`.
 
@@ -94,10 +95,20 @@ terraform {
 
 Make sure to use the same `bucket name` as the one you have deployed before. The `key` is the location of the file where the `terraform.tfstates` needs to be stored inside the bucket.
 
-## <a name="step6"></a>Step 6: Relaunch the initialization
+# Step 6: Relaunch the initialization
 
 Relaunch the initialization to allow terraform to apply the changes of the backend.
 
 ```sh
+terraform init 
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Init.png)
+
 terraform init -reconfigure
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Reconfigure.png)
+
+terraform plan
+
+terraform apply
+
+![Screenshot] (https://github.com/julioaranajr/03-Terraform-Labs/blob/main/tf-labs-backend/Terraform.Apply.png)
 ```
