@@ -1,6 +1,4 @@
-# VPC NEW Infrastructure
-
-## ta-vpc-labs-new-project
+## VPC NEW Infrastructure
 
 | RESOURCE NAME      |  CIDR-BLOCK  |
 | :---               |    :---:     | 
@@ -15,3 +13,7 @@
 | - PRIVATE_SUBNET_A |  10.0.2.0/24 |
 | - PRIVATE_SUBNET_B |  10.0.4.0/24 |
 | - PRIVATE_SUBNET_C |  10.0.6.0/24 |
+
+## Route Tables (Public and Private)
+
+## Internet Gateway
