@@ -1,6 +1,6 @@
 # RESOURCE  "RESOURCE_TYPE"     "RESOURCE_NAME"
 resource "aws_s3_bucket" "ta_test_backend_bucket" {
-  bucket = "ta-test-terraform-tfstates-342055123193"
+  bucket = "ta-labs-test-terraform-tfstates-342055123193"
 
   # META-DATA
   lifecycle {
@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "ta_test_backend_bucket" {
   }
 
   tags = {
-    Name        = "ta-test-terraform-tfstates-342055123193"
+    Name        = "ta-labs-test-terraform-tfstates-342055123193"
     Environment = "Test"
     Team        = "Talent-Academy"
     Owner       = "Julio"
@@ -22,6 +22,7 @@ resource "aws_s3_bucket_versioning" "version_my_bucket" {
     status = "Enabled"
   }
 }
+
 
 resource "aws_dynamodb_table" "terraform_lock_tbl" {
   name           = "terraform-lock"
