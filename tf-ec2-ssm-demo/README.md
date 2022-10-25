@@ -1,6 +1,6 @@
 # tf-ec2-ssm-lab
 
-Alternative of connecting to instance with SSM instead of SSH: [session-manager-prerequisites](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-prerequisites.html)
+Alternative of connecting to instance with SSM instead of SSH, in AWS Systems-Manager/Latest/UserHuide: [session-manager-prerequisites](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-prerequisites.html)
 
 #### Prerequisites
 ````
