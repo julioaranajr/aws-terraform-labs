@@ -9,7 +9,7 @@ Exercise with Terraform:
 
 # Terraform
 
-> **Steps**:
+**Steps**:
 Make sure to execute this exercise by following the steps in the right order:
  - [Step 1: Provider](#step1)
  - [Step 2: Create S3 bucket for backend](#step2)
