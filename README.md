@@ -11,18 +11,18 @@ Exercise with Terraform:
 
 > **Steps**:
 Make sure to execute this exercise by following the steps in the right order:
-> - [Step 1: Provider](#step1)
-> - [Step 2: Create S3 bucket for backend](#step2)
-> - [Step 3: Initialize to get ready for a Plan](#step3)
-> - [Step 4: Deploy your infrastructure](#step4)
-> - [Step 5: Create backend configuration](#step5)
-> - [Step 6: Relaunch the initialization](#step6)
-> - [Step 7: Create a DynamoDB for concurrency lock](#step7)
-> - [Step 8: Deploy infrastructure](#step8)
-> - [Step 9: Add lock to backend configuration](#step9)
-> - [Step 10: relaunch the initialization](#step10)
-> - [Step 11: Create a .gitignore](#step11)
-> - [Step 12: Push your changes](#step12)
+ - [Step 1: Provider](#step1)
+ - [Step 2: Create S3 bucket for backend](#step2)
+ - [Step 3: Initialize to get ready for a Plan](#step3)
+ - [Step 4: Deploy your infrastructure](#step4)
+ - [Step 5: Create backend configuration](#step5)
+ - [Step 6: Relaunch the initialization](#step6)
+ - [Step 7: Create a DynamoDB for concurrency lock](#step7)
+ - [Step 8: Deploy infrastructure](#step8)
+ - [Step 9: Add lock to backend configuration](#step9)
+ - [Step 10: relaunch the initialization](#step10)
+ - [Step 11: Create a .gitignore](#step11)
+ - [Step 12: Push your changes](#step12)
 
 ## <a name="step1"></a>Step 1: Provider
 
