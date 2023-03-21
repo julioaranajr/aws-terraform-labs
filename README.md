@@ -1,5 +1,10 @@
-# 03_Terraform-Labs
-Exercise with Terraform to Setup provider, Create S3 bucket for backend, Create a DynamoDB, Deploy infrastructure, Create a .gitignore  file, Push the changes
+# Terraform Labs
+Exercise with Terraform to Setup provider
+- Create S3 bucket for backend. 
+- Create a DynamoDB table.
+- Pre Deploy infrastructure.
+- Create a .gitignore file. 
+- Push the changes.
 
 # Terraform
 
@@ -37,7 +42,7 @@ cd new-project-folder
 
 > **Create a new file:** `provider.tf`
 
-```javascript
+```json
 provider "aws" {
   region = "eu-central-1"
 }
@@ -50,7 +55,7 @@ provider "aws" {
 
 - Fine more about the resource `aws_s3_bucket` from the [terraform documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
 
-```javascript
+```json
 resource "aws_s3_bucket" "ta_backend_bucket" {
     bucket = "ta-terraform-tfstates-talent-academy-account_id-tfstates-aws.your.account.ID"
 
@@ -103,7 +108,7 @@ The creation of the S3 bucket allows us to use it as our backend to store our `t
 > **Create a new file:**  `backend.tf` 
 This will configure the s3 bucket for the backend.
 
-```javascript
+```json
 terraform {
   backend "s3" {
     bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
@@ -128,7 +133,7 @@ To avoid concurrent `apply` against the same infrastructure, it's best practice 
 
 In the `main.tf` file, create a new resource for the `aws_dymanodb_table`.
 
-```javascript
+```json
 resource "aws_dynamodb_table" "terraform_lock_tbl" {
   name           = "terraform-lock"
   read_capacity  = 1
@@ -154,7 +159,7 @@ Again, run another `terraform plan and apply`.
 
 Modify the `backend.tf` file again to add the new dynamo db table lock
 
-```javascript
+```json
 terraform {
   backend "s3" {
     bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
@@ -169,7 +174,7 @@ terraform {
 With the new configuration within the `backend.tf` file, let's reconfigure the
 project to make sure all changes are applied:
 
-```javascript
+```sh
 terraform init -reconfigure
 ```
 
