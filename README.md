@@ -1,5 +1,6 @@
 # Terraform Labs
-Exercise with Terraform to Setup provider
+Exercise with Terraform: 
+- Setup provider
 - Create S3 bucket for backend. 
 - Create a DynamoDB table.
 - Pre Deploy infrastructure.
@@ -42,7 +43,7 @@ cd new-project-folder
 
 > **Create a new file:** `provider.tf`
 
-```json
+```tf
 provider "aws" {
   region = "eu-central-1"
 }
@@ -55,7 +56,7 @@ provider "aws" {
 
 - Fine more about the resource `aws_s3_bucket` from the [terraform documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
 
-```json
+```tf
 resource "aws_s3_bucket" "ta_backend_bucket" {
     bucket = "ta-terraform-tfstates-talent-academy-account_id-tfstates-aws.your.account.ID"
 
@@ -108,7 +109,7 @@ The creation of the S3 bucket allows us to use it as our backend to store our `t
 > **Create a new file:**  `backend.tf` 
 This will configure the s3 bucket for the backend.
 
-```json
+```tf
 terraform {
   backend "s3" {
     bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
@@ -133,7 +134,7 @@ To avoid concurrent `apply` against the same infrastructure, it's best practice 
 
 In the `main.tf` file, create a new resource for the `aws_dymanodb_table`.
 
-```json
+```tf
 resource "aws_dynamodb_table" "terraform_lock_tbl" {
   name           = "terraform-lock"
   read_capacity  = 1
@@ -159,7 +160,7 @@ Again, run another `terraform plan and apply`.
 
 Modify the `backend.tf` file again to add the new dynamo db table lock
 
-```json
+```tf
 terraform {
   backend "s3" {
     bucket = "talent-academy-account_id-tfstates-aws.your.account.ID"
