@@ -41,7 +41,7 @@ cd new-project-folder
 
 - Start by setting up your provider to define which cloud plugins our project will require to deploy the resources.
 
-> **Create a new file:** `provider.tf`
+**Create a new file:** `provider.tf`
 
 ```sh
 provider "aws" {
@@ -51,7 +51,7 @@ provider "aws" {
 
 ## <a name="step2"></a>Step 2: Create S3 bucket for backend
 
-> **Create a new file:** `main.tf`
+**Create a new file:** `main.tf`
 - `main.tf` file define all the resources we are about to create, which is an S3 bucket named for example: `talent-academy-account_id-tfstates-aws.your.account.ID`
 
 - Fine more about the resource `aws_s3_bucket` from the [terraform documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
@@ -106,7 +106,7 @@ terraform apply
 
 The creation of the S3 bucket allows us to use it as our backend to store our `terraform.tfstates`.
 
-> **Create a new file:**  `backend.tf` 
+**Create a new file:**  `backend.tf` 
 This will configure the s3 bucket for the backend.
 
 ```sh
@@ -181,7 +181,7 @@ terraform init -reconfigure
 
 ## <a name="step11"></a>Step 11: Create a .gitignore
 
-> **Create a new file:** `.gitignore`
+**Create a new file:** `.gitignore`
 Before pushing your work, we need to make sure that certain files and folders are not part of the repository, for example binaries or temporary files. The `tfstates` should never be saved locally or in your source control tool. You can let git knows to ignore these files using a `.gitignore` hidden file.
 
 In the `.gitignore file`, add the following list of files and folders
